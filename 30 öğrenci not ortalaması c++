@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int sayi;
+    int nottoplam;
+    int ortalama;
+
+    for (int i = 1; i <= 30; i++)
+    {
+        cout << i << ". " << "Öğrencinin notunu giriniz: ";
+        cin >> sayi;
+        nottoplam = sayi;
+
+        if (sayi > 100)
+        {
+            cout << "Hatalı giriş yaptınız lütfen 0-100 arası değer giriniz" << endl;
+        }
+
+        else if (sayi < 0)
+        {
+            cout << "Hatalı giriş yaptınız lütfen 0-100 arası değer giriniz" << endl;
+        }
+    }
+
+    ortalama = nottoplam / 30;
+
+    if (ortalama < 70)
+    {
+        cout << "Ortalamanız: " << ortalama << " " << "Başarısız sınıf :(" << endl;
+    }
+
+    else
+    {
+        cout << "Ortalamanız: " << ortalama << " " << "Başarılı sınıf :)" << endl;
+    }
+}

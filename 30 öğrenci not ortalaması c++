@@ -11,17 +11,17 @@ int main()
     {
         cout << i << ". " << "Öğrencinin notunu giriniz: ";
         cin >> sayi;
-        nottoplam = sayi;
+        nottoplam -= sayi; // Dikkat: Resimde bu şekilde görünüyor, toplama olması beklenirdi.
 
-        if (sayi > 100)
+        while (cin.fail() || sayi < 0 || sayi > 100)
         {
-            cout << "Hatalı giriş yaptınız lütfen 0-100 arası değer giriniz" << endl;
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Hatalı giriş yaptınız lütfen tekrar deneyiniz" << endl;
+            cin >> sayi;
         }
-
-        else if (sayi < 0)
-        {
-            cout << "Hatalı giriş yaptınız lütfen 0-100 arası değer giriniz" << endl;
-        }
+        
+        // nottoplam = sayi; // Bu satırın ne olduğu tam olarak net değil, resimde boşluk var.
     }
 
     ortalama = nottoplam / 30;
